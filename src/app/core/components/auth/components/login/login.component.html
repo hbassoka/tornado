@@ -1,0 +1,70 @@
+<!--  Formulaire de connexion -->
+
+<div class="card shadow rounded-3 h-100 py-12 px-12">
+  <h3 class="display-12 mb-4 text-center">J'ai un compte</h3>
+  <!-- Message d'erreur -->
+  <div *ngIf="errorMessage" class="alert alert-danger text-center">
+    {{ errorMessage }}
+  </div>
+  <form (ngSubmit)="submit()" #loginForm="ngForm" novalidate>
+    <!-- login -->
+    <div class="mb-3">
+      <!-- <label for="login" class="form-label">Identiant </label> -->
+      <input type="email" id="login" [(ngModel)]="loginModel().login" name="login" class="form-control"
+        [ngClass]="{'is-invalid': loginForm.submitted && !loginModel().login}"
+        placeholder="Adresse mail" autocomplete="off" required autofocus />
+      
+      <div class="invalid-feedback">
+        Adresse email est requis.
+      </div>
+    </div>
+
+    <!-- Password -->
+    <div class="mb-3">
+      <!-- <label for="password" class="form-label">Mot de passe</label> -->
+      <div class="input-group">
+
+        <input [type]="showPassword ? 'text' : 'password'" id="passwd" [(ngModel)]="loginModel().passwd"
+          name="passwd" class="form-control" placeholder="Mot de passe"
+          [ngClass]="{'is-invalid': loginForm.submitted && !loginModel().passwd}" autocomplete="off" required />
+        <div class="btn btn-outline-secondary btn-md" (click)="toggleShowPassword()">
+          <i class="bi" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
+        </div>
+      </div>
+      
+      <div class="invalid-feedback">
+        Le mot de passe est requis.
+      </div>
+    </div>
+    <div class="mt-8 flex justify-center gap-2 mb-4">
+      <button type="submit" class="btn btn-primary w-40 fw-semibold" [disabled]="loginForm.invalid">
+        Se connecter
+      </button>
+    </div>
+  </form>
+  <div class="text-center mb-12">
+    <p class="mb-3">Connectez-vous avec </p>
+    <div class="d-flex justify-content-center gap-2">
+      <button (click)="loginWithGoogle()" class="btn btn-outline-danger w-40 ">
+        <i class="bi bi-google me-1"></i>Google
+      </button>
+      <button (click)="loginWithFacebook()" class="btn btn-outline-primary w-40 ">
+        <i class="bi bi-facebook me-1"></i>Facebook
+      </button>
+    </div>
+  </div>
+  <div class="text-center">    
+    <div class="d-flex justify-content-center gap-2">
+    <a routerLink="usernameRecovery"
+        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+        Identifiant oublié ?
+      </a>
+     <a routerLink="passwordRecovery"
+        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+        Mot de passe oublié ?
+      </a>
+    </div>
+  </div>
+  
+
+</div>

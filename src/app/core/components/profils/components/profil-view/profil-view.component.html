@@ -1,0 +1,82 @@
+<div class="row">
+    <!-- HERO -->
+  <section class="w-full bg-gray-700 text-white py-6 px-6">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-2"><i class="bi bi-people  me-2"></i>Mon profil </h2>
+      <p class="text-md text-gray-300">
+       Gérer mon profil
+      </p>
+    </div>
+  </section>
+
+    <!-- Section Sécurité -->
+    <section class="w-full py-12 px-6 bg-white">
+      <!-- User Form -->
+    <div  class="card mt-4 shadow-sm border-0">
+      <div class="card-body">       
+        <div>
+          <div class="row">
+               <!-- Nom -->
+          <div class="col-12 col-md-6 mb-3">
+            <label class="form-label">Nom</label>
+            <input type="text" class="form-control" placeholder="ex: Dupont" formControlName="nom" readonly>
+          </div>
+
+           <!-- Prenom -->
+          <div class="col-12 col-md-6 mb-3">
+            <label class="form-label">Prénom</label>
+            <input type="text" class="form-control" placeholder="ex: Jule" formControlName="prenom" readonly>
+          </div>
+          </div>
+         
+
+          <div class="row">
+             <!-- Email -->
+            <div class="col-12 col-md-6 mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" placeholder="ex: jdupont@djdevhub.com" formControlName="email">
+            </div>
+
+            <!-- Téléphone -->
+            <div class=" col-12 col-md-6 mb-3 mb-3">
+              <label class="form-label">Téléphone</label>
+              <input type="tel" class="form-control" placeholder="ex: +336 58 46 12 53" formControlName="telephone">
+            </div>
+          </div>
+           <div class="row">
+              <div class="col-12 col-md-6 mb-3">
+              <label class="form-label">Date de naissance</label>
+              <input type="date" class="form-control"  formControlName="dateDeNaissance">
+            </div>
+           </div>
+           <legend>Adresse postale</legend>
+           <div  formGroupName="adresse">
+            <div class="mb-3">
+              <label class="form-label">Ligne 1</label>
+              <input type="text" class="form-control" placeholder="ex. addr 1" formControlName="ligne1" >
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Ligne 2</label>
+              <input type="text" class="form-control" placeholder="ex. addr 1" formControlName="ligne2" >
+            </div>
+           <div class="mb-3">
+              <label class="form-label">Ligne 3</label>
+              <input type="text" class="form-control" placeholder="ex. addr 1" formControlName="ligne3" >
+            </div>
+          </div>
+          <!-- Buttons -->
+      <div class="mt-8 flex justify-center gap-4 mb-10">
+          <a class="btn btn-primary w-40" >
+              <i class="bi bi-check-lg me-1"></i> Mettre à jour
+          </a>
+           <a class="btn btn-outline-secondary  w-40" >
+                <i class="bi bi-x-lg me-1"></i> Annuler
+          </a>
+          
+      </div>
+          
+        </div>
+      </div>
+    </div>
+    </section>
+</div>

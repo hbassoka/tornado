@@ -1,0 +1,13 @@
+.breadcrumb-wrapper {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.breadcrumb-wrapper::-webkit-scrollbar {
+  height: 4px;
+}
+
+.breadcrumb-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}

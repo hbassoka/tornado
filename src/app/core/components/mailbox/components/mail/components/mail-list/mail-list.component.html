@@ -1,0 +1,25 @@
+<div class="row">
+  <ul class="list-group" > 
+  <li *ngFor="let mail of mails" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start"  >
+     
+    <div class="ms-2 me-auto"  style="cursor: pointer;" (click)="previewMail(mail)" >
+      <div class="fw-bold">{{ mail.subject }}</div>
+       {{ mail.from }} — {{ mail.preview }}
+    </div>
+     <button class="btn btn-sm btn-outline-primary me-1" (click)="replyMail(mail)">
+        <i class="bi bi-reply fs-6"></i>
+      </button>
+      <button class="btn btn-sm btn-outline-info me-1"  (click)="followMail(mail)">
+            <i class="bi bi-star fs-6"></i>
+      </button>
+     <button class="btn btn-sm btn-outline-warning me-1" (click)="spamMail(mail)">
+        <i class="bi bi-shield-x fs-6"></i>
+      </button>   
+      
+      <button class="btn btn-sm btn-outline-danger me-1"  (click)="deleteMail(mail)">
+            <i class="bi bi-trash fs-6"></i>
+      </button>
+    
+  </li> 
+</ul>
+</div>

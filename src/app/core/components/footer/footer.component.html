@@ -1,0 +1,21 @@
+<div class="row">
+
+<footer class="bg-gray-900 text-white">
+  <app-footer-promote></app-footer-promote>
+  @if (isLoggedIn) {
+   <app-footer-sercured 
+    [currentYear]="currentYear"
+    [authorName]="authorName"
+    [authorFunction]="authorFunction"
+    [authorLink]="authorLink"></app-footer-sercured>
+   
+  }
+  @if (!isLoggedIn) {
+    <app-footer-unsercured 
+    [currentYear]="currentYear"
+    [authorName]="authorName"
+    [authorFunction]="authorFunction"
+    [authorLink]="authorLink"></app-footer-unsercured>
+  }  
+</footer>
+</div>

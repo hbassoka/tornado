@@ -1,0 +1,61 @@
+<div class="row">
+  <!-- SECTION — Compétences techniques (HERO) -->
+  <section class="bg-dark text-white py-4 position-relative shadow-sm">
+  <div class="container text-center">
+    <h2 class=" h2 text-4xl md:text-5xl font-extrabold mb-4">
+      <i class="bi bi-magic me-2"></i>
+      Compétences techniques
+    </h2>
+    <p class="text-light mx-auto mb-0" style="max-width: 720px;">
+    Java • Spring Boot • Spring MVC • Struts • JSF • Angular • Kafka • Elasticsearch • Docker • Kubernetes • Ansible • Terraform
+    </p>
+  </div>
+</section>
+
+  <!-- SECTION — Carousel des Références -->
+  <section id="references" class="py-12 bg-white">
+    <div class="container">
+
+      <div id="carouselreferences" class="carousel slide " data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          <!-- Angular Loop -->
+          <div class="bg-white" *ngFor="let competence of competences; let i = index"
+               [ngClass]="{ 'carousel-item': true, 'active': i === 0 }">
+
+            <div class="d-flex justify-content-center align-items-center  py-4">
+              <div class="card shadow-sm border-0 p-5 rounded-3 w-80 h-200" style="min-width:80%;min-height:460px;">
+                <h3 class="h4 fw-bold mb-3 text-primary">
+                  <i class="bi {{competence.icon}} text-blue-400 me-2"></i>{{ competence.titre }}
+                </h3>
+                <p class="text-muted small">
+                  <strong class="text-dark">Technologies :</strong>
+                  {{ competence.technologies }}
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button"
+                data-bs-target="#carouselreferences" data-bs-slide="prev"
+                aria-label="Diapositive précédente">
+          <span class="carousel-control-prev-icon bg-dark rounded-circle p-3 shadow"
+                aria-hidden="true"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button"
+                data-bs-target="#carouselreferences" data-bs-slide="next"
+                aria-label="Diapositive suivante">
+          <span class="carousel-control-next-icon bg-dark rounded-circle p-3 shadow"
+                aria-hidden="true"></span>
+        </button>
+
+      </div>
+
+    </div>
+  </section>
+</div>

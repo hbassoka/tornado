@@ -1,0 +1,112 @@
+<div class="card shadow rounded-3 h-100 py-6">
+    <div class="card-body px-6">
+        <h3 class="display-12 mb-4 text-center">Je n'ai pas de compte</h3>
+        <!-- Message d'erreur -->
+        <div *ngIf="errorMessage" class="alert alert-danger text-center">
+            {{ errorMessage }}
+        </div>
+
+        <form (ngSubmit)="submit()" #registerForm="ngForm" novalidate>
+            <!--  Titre -->
+            <div class="row">
+                <div class="col-12 col-md-6 mb-4">
+                    <label for="titre" class="form-label">Titre</label>
+                    <select id="titre" name="titre" [(ngModel)]="registerModel.titre" class="form-select form-select-md"
+                        [ngClass]="{'is-invalid': registerForm.submitted && !registerModel.titre}" autocomplete="off"
+                        required autofocus>
+                        <option value="" disabled>?</option>
+                        <option *ngFor="let item of titres" [value]="item.id">{{ item.label }}</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Le titre est requis.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Nom -->
+                <div class="col-12 col-md-6 mb-4">
+                    <!-- <label for="nom" class="form-label">Nom</label> -->
+                    <input type="text" id="nom" [(ngModel)]="registerModel.nom" name="nom" placeholder="Nom"
+                        class="form-control" [ngClass]="{'is-invalid': registerForm.submitted && !registerModel.nom}"
+                        autocomplete="off" required autofocus />
+                    <div class="invalid-feedback">
+                        Le nom est requis.
+                    </div>
+                </div>
+                <!-- Prenom -->
+                <div class="col-12 col-md-6 mb-4">
+                    <!--  <label for="prenom" class="form-label">Prénom</label> -->
+                    <input type="text" id="prenom" [(ngModel)]="registerModel.prenom" name="prenom" placeholder="Prénom"
+                        class="form-control" [ngClass]="{'is-invalid': registerForm.submitted && !registerModel.prenom}"
+                        autocomplete="off" required autofocus />
+                    <div class="invalid-feedback">
+                        Le Prénom est requis.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Email -->
+                <div class="col-12 col-md-6 mb-4">
+                    <!-- <label for="email" class="form-label">Adresse mail</label>  -->
+                    <input type="email" id="email" [(ngModel)]="registerModel.email" name="email" placeholder="Adresse mail"
+                        class="form-control" [ngClass]="{'is-invalid': registerForm.submitted && !registerModel.email}"
+                        autocomplete="off" required autofocus />
+                    <div class="invalid-feedback">
+                        L'adresse e-mail requis.
+                    </div>
+                </div>
+                <!-- emailConfirm -->
+                <div class="col-12 col-md-6 mb-4">
+                    <!-- <label for="emailConfirm" class="form-label">Confirmer l'adresse mail </label> -->
+                    <input type="email" id="emailConfirm" [(ngModel)]="registerModel.emailConfirm" name="emailConfirm"
+                        placeholder="Confirmer l'adresse mail" class="form-control"
+                        [ngClass]="{'is-invalid': registerForm.submitted && !registerModel.emailConfirm}" autocomplete="off"
+                        required autofocus />
+                    <div class="invalid-feedback">
+                        Confirmer l'adresse mail.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Password -->
+                <div class="col-12 col-md-6 mb-4">
+                    <!-- <label for="password" class="form-label">Mot de passe</label>  -->
+                    <div class="input-group">
+                        <input [type]="showPassword ? 'text' : 'password'" id="password" placeholder="Mot de passe"
+                            [(ngModel)]="registerModel.password" name="password" class="form-control"
+                            [ngClass]="{'is-invalid': registerForm.submitted && !registerModel.password}"
+                            autocomplete="off" required />
+                        <div type="button" class="btn btn-outline-secondary" (click)="toggleShowPassword()">
+                            <i class="bi" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
+                        </div>
+                    </div>
+                    <div class="invalid-feedback">
+                        Le mot de passe est requis.
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-4">
+                    <!-- PasswordConfirm -->
+                    <!-- <label for="passwordConfirm" class="form-label">Confirmer le mot de passe</label> -->
+                    <div class="input-group">
+                        <input [type]="showPasswordConfirm ? 'text' : 'password'" id="passwordConfirm"
+                            placeholder="Confirmer le mot de passe" [(ngModel)]="registerModel.passwordConfirm"
+                            name="passwordConfirm" class="form-control"
+                            [ngClass]="{'is-invalid': registerForm.submitted && !registerModel.passwordConfirm}"
+                            autocomplete="off" required />
+                        <div type="button" class="btn btn-outline-secondary" (click)="toggleShowPasswordConfirm()">
+                            <i class="bi" [ngClass]="showPasswordConfirm ? 'bi-eye-slash' : 'bi-eye'"></i>
+                        </div>
+                    </div>
+                    <div class="invalid-feedback">
+                        Email non identique.
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 flex justify-center gap-4 mb-10">
+                <button type="submit" class="btn btn-primary w-60 " [disabled]="registerForm.invalid">
+                    Accepter & S'inscrire
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

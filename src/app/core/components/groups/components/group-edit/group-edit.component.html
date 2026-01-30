@@ -1,0 +1,43 @@
+<div class="row">
+  <!-- HERO -->
+  <section class="w-full bg-gray-700 text-white py-6 px-6">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-2"><i class="bi bi-people  me-2"></i>Gestion des groupes</h2>
+      <p class="text-md text-gray-300">
+        Gestion et configuration des groupes utilisateurs
+      </p>
+    </div>
+  </section>
+
+  <!-- Section Sécurité -->
+  <!-- Section Sécurité -->
+  <section class="w-full py-12 px-6 bg-white">
+     <form [formGroup]="groupForm">
+
+
+   
+    <div class="row ">
+        <label for="roles" class="col-form-label">Rôles :</label>
+        <div class="mb-3">            
+            <ngx-dual-listbox id="roles"
+                [availableItems]="availableRoles()"
+                [selectedItems]="selectedRoles()"
+                [showSearchBox]="true"                      
+                [readOnly]="false"
+                (availableItemChange)="availableRoles.set($event)"
+                (selectedItemChange)="selectedRoles.set($event)"
+            ></ngx-dual-listbox>
+        </div>
+     </div>
+     <div class="mt-8 flex justify-center gap-4 mb-10">
+            <button class="btn btn-success w-40 " type="submit">
+              <i class="bi bi-check-lg me-1"></i> {{editingGroup() ? 'Mettre à jour' : 'Créer'}}
+            </button>
+              <a class="btn btn-outline-secondary  w-40" routerLink="/admin/groups">
+                    <i class="bi bi-x-lg me-1"></i> Annuler
+              </a>
+        </div>
+    </form>
+   </section>
+
+</div>

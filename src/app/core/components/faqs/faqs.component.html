@@ -1,0 +1,36 @@
+<div class="row">
+<div class="container bg-white  py-4">
+
+  <!-- Header FAQ -->
+  <div class="text-center mb-4">
+    <h1 class="h3 fw-bold">FAQs</h1>
+    <p class="small text-muted mb-0">
+      Retrouvez ici les réponses aux questions les plus fréquentes sur l'application : son fonctionnement, les technologies utilisées, la communication entre les services et les bonnes pratiques adoptées.
+    </p>
+  </div>
+
+  <div class="accordion" id="faqAccordion  scrollable-container">
+    <div class="card mb-3 " *ngFor="let item of faq; let i = index">
+      
+      <!-- Card Header avec bouton + / - -->
+      <div class="card-header p-0" id="heading{{i}}">
+        <button class="btn btn-link w-100 text-start text-decoration-none p-3 d-flex justify-content-between align-items-center"
+                type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + i" 
+                aria-expanded="false" [attr.aria-controls]="'collapse' + i">
+          <span>{{ item.question }}</span>
+          <span class="accordion-icon">+</span>
+        </button>
+      </div>
+
+      <!-- Card Body -->
+      <div [id]="'collapse' + i" class="collapse" [attr.aria-labelledby]="'heading' + i" data-bs-parent="#faqAccordion">
+        <div class="card-body">
+          {{ item.answer }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</div>

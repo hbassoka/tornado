@@ -1,0 +1,11 @@
+<div *ngIf="mail; else noMail" class="p-3">
+  <h4>{{ mail.subject }}</h4>
+  <p class="text-muted">{{ mail.from }} — {{ mail.date }}</p>
+  <hr />
+  <div>{{ mail.body }}</div>
+</div>
+<ng-template #noMail>
+  <div class="text-muted p-4 text-center">
+    Select a message to read
+  </div>
+</ng-template>

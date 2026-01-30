@@ -1,0 +1,49 @@
+<div class="row">
+  <!-- HERO -->
+  <section class="w-full bg-gray-700 text-white py-6 px-6">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-2"><i class="bi bi-inboxes-fill  me-2"></i>Messagerie</h2>
+      <p class="text-md text-gray-300">
+        Gestion et administration de la messagerie
+      </p>
+    </div>
+  </section>
+  <!-- Section Sécurité -->
+    <section class="w-full py-6 px-6 bg-white">   
+                
+          <div class="row mb-3 px-2 py-2">
+          <input
+              type="text"
+              class="form-control  form-control-md"
+              placeholder="Rechercher..."
+              [(ngModel)]="keywords"
+              (keyup)="onSearchChange()">       
+      </div>          
+      <div class="row">
+        <!-- Left Sidebar -->
+        <div class="col-12 col-md-4 col-lg-3 border-end">         
+          <div class="scrollable-container">   
+            <app-mail-folder  (openCompose)="openCompose()"></app-mail-folder>
+          </div>   
+        </div>
+        <!-- Right Content -->
+        <div class="col-12 col-md-8 col-lg-9">          
+          
+              <div *ngIf="showMailList && !showMailCompose" class="scrollable-container" >
+                  <app-mail-list ></app-mail-list>
+              </div>
+
+             <div *ngIf="!showMailList && !showMailCompose" class="scrollable-container" >
+               <app-mail-view ></app-mail-view>
+             </div> 
+              <!-- Compose Modal -->
+            <div *ngIf="showMailCompose" >
+               <app-mail-create  (closeCompose)="closeCompose()"></app-mail-create>
+             </div>
+              <div *ngIf="showMailReply" >
+                  <app-mail-reply></app-mail-reply>
+             </div>
+        </div>
+      </div>    
+  </section>
+</div>

@@ -1,0 +1,45 @@
+.card-menu {
+  border: none;
+  border-radius: 1rem; /* coins arrondis */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+  background: #ffffff;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-menu:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+.card-menu .card-body i {
+  font-size: 2rem;
+  color: #0d6efd; /* bleu Bootstrap */
+  transition: color 0.3s ease;
+}
+
+.card-menu:hover .card-body i {
+  color: #0a58ca; /* bleu plus foncé au hover */
+}
+
+.card-menu .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+.card-menu .card-text {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #343a40;
+  border-left: 4px solid #0d6efd;
+  padding-left: 0.5rem;
+}
+

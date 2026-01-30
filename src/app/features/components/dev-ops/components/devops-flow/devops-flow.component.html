@@ -1,0 +1,47 @@
+
+
+
+    <div id="carouselreferences" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner bg-white">
+
+        <!-- Angular Loop -->
+        <div  class="bg-white"  *ngFor="let mission of missions; let i = index"
+             [ngClass]="{ 'carousel-item': true, 'active': i === 0 }">
+
+          <div class="d-flex justify-content-center align-items-center py-4">
+
+            <div class="card shadow-sm border-0 p-5 rounded-3 w-80 h-200" style="min-width:80%;min-height:460px;">
+              <h3 class="h4 fw-bold mb-3 text-primary">{{ mission.nom }}</h3>
+
+              <p class="mb-3 text-secondary" style="font-size: 1.05rem;">
+                {{ mission.description }}
+              </p>
+
+             <div class="d-flex justify-content-center "  >
+                <img src="{{mission.imageUrl}}" alt="{{mission.imageTitle}}" class="img-fluid rounded shadow"
+                  style="max-width: 100%;" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button"
+              data-bs-target="#carouselreferences" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle p-3 shadow"
+              aria-hidden="true"></span>
+        <span class="visually-hidden">Précédent</span>
+      </button>
+
+      <button class="carousel-control-next" type="button"
+              data-bs-target="#carouselreferences" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle p-3 shadow"
+              aria-hidden="true"></span>
+        <span class="visually-hidden">Suivant</span>
+      </button>
+    </div>
+
+
+
+  

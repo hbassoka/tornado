@@ -1,0 +1,59 @@
+<div class="row">
+<div class="container bg-white  py-4">
+  <!-- Header -->
+  <div class="text-center mb-4">
+    <h1 class="h3 fw-bold text-danger">Suppression de vos données</h1>
+    <p class="small text-muted">Vous pouvez demander la suppression définitive de votre compte et de toutes vos données personnelles.</p>
+    <p class="small text-muted">Dernière mise à jour : {{currentDate | date:'longDate'}}</p>
+  </div>
+
+  <div class="row g-3">
+
+    <div class="col-12 col-md-6">
+
+      <!-- Procédure -->
+      <div class="card shadow-sm mb-3">
+        <div class="card-body h-30">
+          <h2 class="h6 fw-bold">Procédure</h2>
+          <p class="small mb-2">Pour supprimer vos données, envoyez un email à :</p>
+          <p class="small mb-0"><a href="mailto:{{mailto}}" class="text-decoration-none"> Contactez-moi</a></p>
+        </div>
+      </div>
+
+      <!-- Informations à fournir -->
+      <div class="card shadow-sm mb-3">
+        <div class="card-body h-30">
+          <h2 class="h6 fw-bold">Merci d’inclure</h2>
+          <ul class="small ps-3 mb-0">
+            <li>L’adresse email associée à votre compte</li>
+            <li>Toute information permettant de vérifier votre identité</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+
+       <!-- Délai de suppression -->
+      <div class="card shadow-sm mb-3">
+        <div class="card-body h-30">
+          <h2 class="h6 fw-bold">Délai de suppression</h2>
+          <p class="small mb-0">
+            La suppression sera effectuée sous <strong>30 jours maximum</strong>. Une fois supprimées, vos données ne seront <strong>pas récupérables</strong>.
+          </p>
+        </div>
+      </div>
+
+       <!-- Contact -->
+      <div class="card shadow-sm mb-3">
+        <div class="card-body h-30">
+          <h2 class="h6 fw-bold">Contact</h2>
+          <p class="small mb-0">
+            Pour toute question complémentaire : <a href="mailto:{{mailto}}" class="text-decoration-none"> Contactez-moi</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>

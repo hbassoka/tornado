@@ -1,0 +1,13 @@
+<div class="row">
+  <section class="bg-white py-5">
+
+      <div class="p-8 bg-indigo-50 rounded-2xl shadow-inner py-4">  
+        <h3 class="display-12 mb-4 text-center">Pourquoi nous contacter ?</h3>      
+        <ul class="text-gray-700 space-y-2">
+           @for( motif of motifs; track motif.code) {
+             <li>✔ {{ motif.label }}</li>
+           }       
+        </ul>
+      </div>       
+  </section>
+</div>

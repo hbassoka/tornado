@@ -1,0 +1,19 @@
+.devops-section {
+  background-color: #ffffff;
+}
+
+.devops-card {
+  padding: 2rem 1.5rem;
+  border-radius: 0.75rem;
+  background-color: #f8f9fa;
+  transition: transform .2s ease, box-shadow .2s ease;
+
+  h5 {
+    margin-bottom: .5rem;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .5rem 1.25rem rgba(0,0,0,.08);
+  }
+}

@@ -1,0 +1,73 @@
+<footer class="bg-dark text-white pt-4 pb-3">
+  <div class="container">
+    
+    <div class="row text-center text-md-start">
+
+      <!-- Colonne 1 : À propos -->
+      <div class="col-12 col-md-4 mb-3">
+        <h6 class="text-uppercase fw-bold">À propos</h6>
+        <ul class="list-unstyled">
+          <li>
+            <a routerLink="/about" class="text-white text-decoration-none">
+              Présentation
+            </a>
+          </li>
+          <li>
+            <a routerLink="/lexique" class="text-white text-decoration-none">
+              Lexique
+            </a>
+          </li>
+          <li>
+            <a routerLink="/faqs" class="text-white text-decoration-none">
+              FAQs
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Colonne 2 : Légal -->
+      <div class="col-12 col-md-4 mb-3">
+        <h6 class="text-uppercase fw-bold">Informations légales</h6>
+        <ul class="list-unstyled">
+          <li>
+            <a routerLink="/mentions-legales" class="text-white text-decoration-none">
+              Mentions légales
+            </a>
+          </li>
+          <li>
+            <a routerLink="/privacy-policy" class="text-white text-decoration-none">
+              Politique de confidentialité
+            </a>
+          </li>
+          <li>
+            <a routerLink="/data-deletion" class="text-white text-decoration-none">
+              Suppression des données
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Colonne 3 : Signature -->
+      <div class="col-12 col-md-4 mb-3">
+        <h6 class="text-uppercase fw-bold">PLUS D'INFOS</h6>
+        <p class="mb-1">
+          <a  target="_blank"  [href]="authorLink"><strong>{{authorName}}</strong></a>
+        </p>
+         <p class="mb-1">
+            <strong>{{authorFunction}}</strong> 
+         </p>          
+        <p class="mb-0 small text-secondary">
+           © {{ currentYear }} JDevHub — Tous droits réservés 
+        </p>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary my-3">
+
+    <div class="text-center small text-secondary">
+     Conçu avec rigueur et exigence professionnelle
+    </div>
+
+  </div>
+</footer>

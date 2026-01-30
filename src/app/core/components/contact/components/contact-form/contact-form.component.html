@@ -1,0 +1,110 @@
+<div class="row">
+
+
+  <section class="bg-white py-5">
+ 
+    
+    <div class="card shadow-lg rounded-lg mx-auto p-4" style="max-width: 600px;">
+
+       <h3 class="display-12 mb-4 text-center">Saisissez votre message</h3>
+      <!-- Success Message -->
+      <div *ngIf="successMessage" class="toast align-items-center text-white bg-success border-0 mt-4 fixed-top start-50 translate-middle-x" role="alert">
+        <div class="d-flex">
+          <div class="toast-body">{{ successMessage }}</div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" (click)="successMessage = null"></button>
+        </div>
+      </div>
+
+      <!-- Error Message -->
+      <div *ngIf="errorMessage" class="toast align-items-center text-white bg-danger border-0 mt-4 fixed-top start-50 translate-middle-x" role="alert">
+        <div class="d-flex">
+          <div class="toast-body">{{ errorMessage }}</div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto w-40" (click)="errorMessage = null"></button>
+        </div>
+      </div>
+
+
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+         <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="titreId" class="form-label">Titre</label>
+            <select id="titreId" formControlName="titreId" class="form-select">
+              <option *ngFor="let titre of titres" [value]="titre.id">{{ titre.label }}</option>
+            </select>
+            @if(f['titreId']?.invalid && (f['titreId']?.dirty || f['titreId']?.touched)){
+              
+            <div  class="text-danger small">
+              Le titre est requis.
+            </div>
+            }
+           
+          </div>
+         </div>
+ 
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="nom" class="form-label">Nom</label>
+            <input id="nom" formControlName="nom" type="text" class="form-control" />
+           
+            <div *ngIf="f['nom']!.invalid && (f['nom']?.dirty || f['nom']?.touched)" class="text-danger small">
+              Le nom est requis.
+            </div>
+          </div>
+        
+          <div class="col-md-6 mb-3">
+            <label for="prenom" class="form-label">Prenom</label>
+            <input id="prenom" formControlName="prenom" type="text" class="form-control" />
+            <div *ngIf="f['prenom']?.invalid && (f['prenom']?.dirty || f['prenom']?.touched)" class="text-danger small">
+              Le prénom est requis.
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6  mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input id="email" formControlName="email" type="email" class="form-control" />
+            <div *ngIf="f['email']?.invalid && (f['email']?.dirty || f['email']?.touched)" class="text-danger small">
+              L'email est requis et doit être valide.
+            </div>
+          </div>
+
+          <div class="col-md-6  mb-3">
+            <label for="telephone" class="form-label">Telephone</label>
+            <input id="telephone" formControlName="telephone" type="text" class="form-control" />
+            <div *ngIf="f['telephone'].invalid && (f['telephone'].dirty || f['telephone'].touched)" class="text-danger small">
+            Le numéro de téléphone est requis et doit comporter 10 chiffres.
+          </div>
+          </div>
+          </div>
+        <!-- Subject Section -->
+        <div class="mb-3">
+          <label for="sujetId" class="form-label">Objet</label>
+          <select id="sujetId" formControlName="sujetId" class="form-select">
+            <option *ngFor="let sujet of sujets" [value]="sujet.id">{{ sujet.label }}</option>
+          </select>
+          <div *ngIf="f['sujetId'].invalid && (f['sujetId'].dirty || f['sujetId'].touched)" class="text-danger small">
+             Veuillez selectionner l'objet du message.
+          </div>
+        </div>
+
+        <!-- Message Section -->
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea id="message" formControlName="message" class="form-control"></textarea>
+          <div *ngIf="f['message'].invalid && (f['message'].dirty || f['message'].touched)" class="text-danger small">
+            Le message est requis.
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+         <div class="mt-8 flex justify-center gap-4 mb-10">
+          <button type="submit" [disabled]="contactForm.invalid" class="btn btn-primary w-40">
+            <i class="bi bi-send me-1"></i> Envoyer
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+</div>

@@ -1,0 +1,67 @@
+<div class="dual-listbox">
+
+    <!-- Available -->
+
+    <div class="listbox">
+         <label class="mb-3">{{availableItemsTitle()}}</label>
+         @if(showSearchBox()){
+            <div class="search-box">
+                <input type="text"  
+                 [(ngModel)]="availableSearchTerm"                 
+                 placeholder="Rechercher..."  
+                 [disabled]="readOnly()"/>
+                <span class="search-icon">
+                    <i class="fi bi-search"></i>
+                </span>
+            </div>
+         }        
+        <div class="listbox-items">
+            @for(item of availableFilteredItems(); track item.id){
+            <div class="listbox-item text-truncate" [class.selected]="selectedItem() === item"
+                (click)="selectItem(item)">
+                {{ item.label }}</div>
+            }
+        </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="buttons" >
+        
+        <button class="btn btn-sm btn-outline-primary"  [disabled]="readOnly()" (click)="moveAllToAvailable()">
+            <i class="bi bi-chevron-double-left fs-6"></i>
+        </button>
+        <button class="btn btn-sm btn-outline-primary" [disabled]="readOnly()" (click)="moveToAvailable ()" >
+            <i class="bi bi-chevron-left fs-6"></i>
+        </button>
+        <button class="btn btn-sm btn-outline-primary" [disabled]="readOnly()" (click)="moveToSelected()" >
+            <i class="bi bi-chevron-right fs-6"></i>
+        </button>
+        <button class="btn btn-sm btn-outline-primary" [disabled]="readOnly()" (click)="moveAllToSelected ()" >
+            <i class="bi bi-chevron-double-right fs-6"></i>
+        </button>
+         
+    </div>
+    <!-- Selected -->
+    <div class="listbox">
+         <label class="mb-3">{{selectedItemsTitle()}}</label>
+         @if(showSearchBox()){
+              <div class="search-box">
+            <input type="text" 
+                [(ngModel)]="selectedSearchTerm"                 
+                placeholder="Rechercher..."  
+                [disabled]="readOnly()"/>
+            <span class="search-icon">
+                <i class="fi bi-search"></i>
+            </span>
+        </div>
+         }
+       
+        <div class="listbox-items">
+            @for(item of selectedFilteredItems(); track item.id){
+            <div class="listbox-item text-truncate" [class.selected]="selectedItem() === item"
+                (click)="selectItem(item)">
+                {{ item.label }}</div>
+            }
+        </div>
+    </div>
+</div>

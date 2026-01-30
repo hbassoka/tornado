@@ -1,0 +1,30 @@
+<div class="row">
+   <section>
+     <form [formGroup]="form">
+          <div class="mb-3">
+            <label class="form-label">To</label>
+            <input type="email" class="form-control" formControlName="to">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Objet</label>
+            <input type="text" class="form-control" formControlName="subject">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea rows="8" class="form-control" formControlName="body"></textarea>
+          </div>
+           <div class="text-center">                
+              <div class="d-flex justify-content-center gap-2">             
+                <button    class="btn btn-outline-danger w-40" (click)="callCloseCompose()">
+                  <i class="bi bi-x-lg me-1"></i>Annuler
+                </button>
+                <button  class="btn btn-outline-primary w-40" (click)="send()">
+                  <i class="bi bi-send me-1"></i>Envoyer
+                </button>
+              </div>            
+           </div>   
+        </form>
+  </section>
+</div>

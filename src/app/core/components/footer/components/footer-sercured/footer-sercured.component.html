@@ -1,0 +1,80 @@
+<footer class="bg-dark text-white pt-5 pb-4">
+  <div class="container">
+
+    <div class="row g-4 text-center text-md-start">
+
+      <!-- Informations -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <h5 class="fw-bold mb-3 text-uppercase">À propos</h5>
+        <ul class="list-unstyled">
+          <li><a routerLink="/about" class="text-white text-decoration-none d-block mb-2">Présentation</a></li>
+          <li><a routerLink="/lexique" class="text-white text-decoration-none d-block mb-2">Lexique</a></li>
+          <li><a routerLink="/faqs" class="text-white text-decoration-none d-block mb-2">FAQs</a></li>
+          <li><a routerLink="/privacy-policy" class="text-white text-decoration-none d-block mb-2">Confidentialités</a></li>
+          <li><a routerLink="/data-deletion" class="text-white text-decoration-none d-block mb-2">Suppression des données</a></li>
+          <li><a routerLink="/mentions-legales" class="text-white text-decoration-none d-block">Mentions légales</a></li>
+        </ul>
+      </div>
+
+      <!-- Outils DevOps -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <h5 class="fw-bold mb-3 text-uppercase">Outils DevOps</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://gitlab.jdevhub.com" target="_blank" rel="noopener"
+                 class="text-white text-decoration-none d-block mb-2">GitLab CI</a></li>
+          <li><a href="https://jenkins.jdevhub.com" target="_blank" rel="noopener"
+                 class="text-white text-decoration-none d-block mb-2">Jenkins</a></li>
+          <li><a href="https://sonar.jdevhub.com" target="_blank" rel="noopener"
+                 class="text-white text-decoration-none d-block mb-2">SonarQube</a></li>
+          <li><a href="https://nexus.jdevhub.com" target="_blank" rel="noopener"
+                 class="text-white text-decoration-none d-block mb-2">Nexus</a></li>
+          <li><a href="https://keycloak.jdevhub.com" target="_blank" rel="noopener"
+                 class="text-white text-decoration-none d-block">Keycloak</a></li>
+        </ul>
+      </div>
+
+      <!-- Supervision -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <h5 class="fw-bold mb-3 text-uppercase">Supervision</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://monitor.jdevhub.com/manager/" target="_blank" rel="noopener"
+                 class="text-white text-decoration-none d-block mb-2">Load Balancer</a></li>
+          <li><a href="https://monitor.jdevhub.com/status/" target="_blank" rel="noopener"
+                 class="text-white text-decoration-none d-block mb-2">Proxy Status</a></li>
+          <li><a href="https://grafana.jdevhub.com" target="_blank" rel="noopener"
+                 class="text-white text-decoration-none d-block mb-2">Grafana</a></li>
+          <li><a href="https://prometheus.jdevhub.com" target="_blank" rel="noopener"
+                 class="text-white text-decoration-none d-block">Prometheus</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div class="col-12 col-sm-6 col-md-3">
+        <h5 class="fw-bold mb-3 text-uppercase">Support</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://jdevhub.atlassian.net/jira/" target="_blank" rel="noopener"
+                 class="text-white text-decoration-none d-block mb-2">Jira</a></li>
+          <li><a href="https://jdevhub.atlassian.net/wiki/" target="_blank" rel="noopener"
+                 class="text-white text-decoration-none d-block mb-2">Confluence</a></li>
+          <li><a href="https://roundcube.jdevhub.com" target="_blank" rel="noopener"
+                 class="text-white text-decoration-none d-block mb-2">Roundcube</a></li>
+          <li><a href="https://wiki.jdevhub.com" target="_blank" rel="noopener"
+                 class="text-white text-decoration-none d-block">MediaWiki</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary my-4">
+
+    <div class="text-center small text-secondary">
+      © {{ currentYear }} JDevHub — Tous droits réservés |
+      <a [href]="authorLink" target="_blank"
+         class="text-white text-decoration-none fw-semibold">
+        {{ authorName }}
+      </a>
+      — <strong>{{ authorFunction }}</strong>
+    </div>
+
+  </div>
+</footer>
