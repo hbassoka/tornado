@@ -14,9 +14,8 @@ pipeline {
        
         // Set Git config        
         GIT_USER_NAME="jenkins";
-        GIT_USER_EMAIL="admin@jdevhub.com"
-        GIT_REPO_URL = 'https://gitlab.jdevhub.com/dev/frontend/intranet.git'
-        GIT_CREDENTIALS_ID='gitlab_creds'
+        GIT_REPO_URL = 'https://github.com/hbassoka/tornado.git'
+        GITHUB_CREDENTIALS_ID='github_creds'
         TAG_PREFIX = 'release-'
         
         // sonard
@@ -67,7 +66,7 @@ pipeline {
                     branches: [[name: "*/${params.BRANCH_TO_BUILD}"]],
                     userRemoteConfigs: [[
                         url: "${env.GIT_REPO_URL}",
-                        credentialsId: "${env.GIT_CREDENTIALS_ID}"
+                        credentialsId: "${env.GITHUB_CREDENTIALS_ID}"
                     ]]
                 ])
             }

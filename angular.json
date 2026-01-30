@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "intranet": {
+    "tornado": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -96,13 +96,13 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "intranet:build:production"
+              "buildTarget": "tornado:build:production"
             }, 
             "preproduction": {
-              "buildTarget": "intranet:build:preproduction"
+              "buildTarget": "tornado:build:preproduction"
             },            
             "development": {
-              "buildTarget": "intranet:build:development"
+              "buildTarget": "tornado:build:development"
             }
           },
           "defaultConfiguration": "development"

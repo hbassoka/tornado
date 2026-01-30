@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: intranet
+  name: tornado
   labels:
-    app: intranet
+    app: tornado
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: intranet
+      app: tornado
   template:
     metadata:
       labels:
-        app: intranet
+        app: tornado
     spec:
       containers:
-        - name: intranet-container
-          image: nexus.jdevhub.com/intranet:latest
+        - name: tornado-container
+          image: nexus.jdevhub.com/tornado:latest
           ports:
             - containerPort: 80
           readinessProbe:
@@ -37,10 +37,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: intranet
+  name: tornado
 spec:
   selector:
-    app: intranet
+    app: tornado
   type: NodePort
   ports:
     - protocol: TCP
