@@ -4,17 +4,17 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://pprod.jdevhub.com/backend',
-  brokerUrl:  'wss://pprod.jdevhub.com/backend/api/ws',
-  clientUrl: '?redirect_uri=https://pprod.jdevhub.com/auth',
+  apiBaseUrl: 'https://pprod.tornado.jdevhub.com/backend',
+  brokerUrl:  'wss://pprod.tornado.jdevhub.com/backend/api/ws',
+  clientUrl: '?redirect_uri=https://pprod.tornado.jdevhub.com/auth',
   accessTokenKey:'access_token',
   refreshTokenKey:'refresh_token',
   userKey:'auth-user',
   photoBaseUrl:'assets/photos',
   videoBaseUrl:'assets/videos',
 
-   googleClientId:'283386152674-hstl5h1k4oetpqrompekg3792v1a65df.apps.googleusercontent.com',
-   facebookClientId:'2650231771993265',
+  googleClientId:'283386152674-hstl5h1k4oetpqrompekg3792v1a65df.apps.googleusercontent.com',
+  facebookClientId:'2650231771993265',
   
 };
 
